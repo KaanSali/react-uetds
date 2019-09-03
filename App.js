@@ -4,8 +4,8 @@ import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
-
-import AppNavigator from './navigation/AppNavigator';
+import DrawerNavigator from './navigation/DrawerNavigator';
+import StackNavigator from './navigation/StackNavigator';
 
 export default function App(props) {
   const [isLoadingComplete, setLoadingComplete] = useState(false);
@@ -16,17 +16,16 @@ export default function App(props) {
         startAsync={loadResourcesAsync}
         onError={handleLoadingError}
         onFinish={() => handleFinishLoading(setLoadingComplete)}
-      />
+      /> 
     );
   } else {
     return (
       <View style={styles.container}>
-    {<StatusBar StatusBar barStyle="dark-content" backgroundColor="#000000" translucent={true} hidden={false} currentHeight={20}/>}
-        <AppNavigator />
+        <StackNavigator/>
       </View>
     );
   }
-}
+} 
 
 async function loadResourcesAsync() {
   await Promise.all([

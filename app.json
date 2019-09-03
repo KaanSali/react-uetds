@@ -30,7 +30,9 @@
       "package": "com.alloversoft.reactuetds"
     },
     "androidStatusBar": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#ffffff",
+      "barStyle" : "light-content"
+
    }
   }
 }

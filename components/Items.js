@@ -8,7 +8,7 @@ export class ListItem extends React.Component{
   }
   render(){
     return (
-      <TouchableOpacity style={this.styles.shadow} onPress={() => this._onClickItem(this.props)} underlayColor="white">
+      <TouchableOpacity style={this.styles.shadow} underlayColor="white">
         <View style={[this.styles.itemContainer , this.styles.flex_row, this.styles.shadow]}>
           <View style={this.styles.imageContainer}>
             <Image source={this.props.image} style={this.styles.image}/>
@@ -21,9 +21,6 @@ export class ListItem extends React.Component{
       </TouchableOpacity>
     );
   }
-   _onClickItem(props){
-    alert(props.username + ' Kullanıcı profiline girildi');
-  }
 
   styles = StyleSheet.create({
     flex_row : {
@@ -32,15 +29,15 @@ export class ListItem extends React.Component{
     },
     shadow:{
       backgroundColor: '#ffffff',
-/*       shadowColor: "#bfbfbf",
+      shadowColor: "#bfbfbf",
       shadowOffset: {
         width: 0,
         height: 2,
       },
       shadowOpacity: 0.23,
-      shadowRadius: 2.62, */
+      shadowRadius: 2.62,
       borderColor:'#ffffff',
-      elevation: 3
+      elevation: 4
     },
     itemContainer:{
       width: vw(90),
